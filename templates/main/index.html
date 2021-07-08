@@ -1,12 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CheckMath</title>
-</head>
-<body>
-    <h1>Hello CheckMath</h1>
-</body>
-</html>
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}
+    CheckMath
+{% endblock %}
+
+{% block body %}
+    
+    <div class="pagehead">
+        Select a subject:
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'main/img/genmath.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <button type="button" class="btn btn-outline-primary">General Mathematics</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'main/img/precal.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <button type="button" class="btn btn-outline-primary">Pre-Calculus</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'main/img/basiccal.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <button type="button" class="btn btn-outline-primary">Basic Calculus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <button type="button" class="btn btn-outline-primary">General Mathematics</button>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <button type="button" class="btn btn-outline-primary">Pre-Calculus</button>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <button type="button" class="btn btn-outline-primary">Basic Calculus</button>
+            </div>
+        </div>
+    </div> -->
+
+{% endblock %}
