@@ -1,0 +1,38 @@
+
+.subject {
+    font-size: 13px;
+    color: #7c3aed;
+}
+
+.choices {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.choices button {
+    margin: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.input-group-text {
+    background-color: #bcd7fc;
+}
+
+.btn {
+    align-self: center;
+    background-color: #7c3aed;
+}

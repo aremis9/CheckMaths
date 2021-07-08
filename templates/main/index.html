@@ -15,23 +15,25 @@
             <div class="card h-100">
                 <img src="{% static 'main/img/genmath.jpg' %}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <button type="button" class="btn btn-outline-primary">General Mathematics</button>
+                    <button type="button" onclick="location.href='{% url 'genmath:index' %}';" class="btn btn-outline-primary">General Mathematics</button>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card h-100">
-                <img src="{% static 'main/img/precal.jpg' %}" class="card-img-top" alt="...">
+                <img src="{% static 'main/img/precal.jpg' %}" class="card-img-top blurred" alt="...">
                 <div class="card-body">
-                    <button type="button" class="btn btn-outline-primary">Pre-Calculus</button>
+                    <button type="button" class="btn btn-outline-primary disabled">Pre-Calculus</button>
+                    <span class="badge rounded-pill bg-secondary comingsoon">Coming Soon</span>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card h-100">
-                <img src="{% static 'main/img/basiccal.jpg' %}" class="card-img-top" alt="...">
+                <img src="{% static 'main/img/basiccal.jpg' %}" class="card-img-top blurred" alt="...">
                 <div class="card-body">
-                    <button type="button" class="btn btn-outline-primary">Basic Calculus</button>
+                    <button type="button" class="btn btn-outline-primary disabled">Basic Calculus</button>
+                    <span class="badge rounded-pill bg-secondary comingsoon">Coming Soon</span>
                 </div>
             </div>
         </div>

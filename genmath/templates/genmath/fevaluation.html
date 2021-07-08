@@ -1,0 +1,40 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'genmath/styles.css' %}">
+    <script src="{% static 'genmath/script.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}
+    Evaluation of Functions - CheckMath
+{% endblock %}
+
+{% block body %}
+    <div class="pagehead">
+        <h6 class="subject">General Mathematics</h6>
+        Evaluation of Functions
+    </div>
+    
+    <div class="container">
+        <form action="" class="form">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="functioninput" placeholder="Function" value="x^2 + 6x + 9">
+                <label for="functioninput">Enter Function</label>
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">x =</span>
+                <input type="text" class="form-control" value="4" placeholder="Enter value of 'x'" aria-label="Enter function" aria-describedby="basic-addon1">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Solve">
+        </form>
+        <!-- <form class="form-floating">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">f(<input type="text" style="width: 20px;">) =</span>
+                <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" aria-describedby="basic-addon1">
+                <label for="floatingInputValue">Input with value</label>
+            </div>
+        </form> -->
+    </div>
+
+{% endblock %}

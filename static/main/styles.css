@@ -33,6 +33,8 @@ nav, #navbar {
 
 .dropdown-menu {
     background-color: #60a5fa;
+    margin-top: 1rem !important;
+    left: unset !important;
 }
 
 .pagehead {
@@ -58,12 +60,25 @@ nav, #navbar {
 .card-body {
     background-color: rgb(232, 241, 250);
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
 }
 
 .btn {
     width: 209.031px;
+}
+
+.blurred {
+    filter: blur(4px);
+}
+
+.comingsoon {
+    margin-top: 10px;
+}
+
+.comingsoon:hover, .blurred:hover {
+    cursor: not-allowed !important;
 }
 
 
