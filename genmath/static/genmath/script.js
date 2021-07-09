@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     variables.push('x');
     functioninput.addEventListener('keyup', (event) => {
 
+        var MQ = MathQuill.getInterface(2);
+        var mathdisplay = document.getElementById('math-display');
+        mathdisplay.innerHTML = functioninput.value
+        MQ.StaticMath(mathdisplay);
         if (functioninput.value === "") {
             while (variableinputs.length != 1) {
                 let lastchild = variableinputs[variableinputs.length - 1]
