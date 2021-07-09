@@ -18,7 +18,8 @@
     align-items: center;
 }
 
-.choices button {
+.choices a {
+    width: auto;
     margin: 10px;
 }
 
