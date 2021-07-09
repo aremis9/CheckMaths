@@ -1,4 +1,11 @@
 
+.notnav {
+    background-color: transparent;
+    padding: 1rem 0 0 36px;
+    font-size: 0.8rem;
+    --bs-breadcrumb-divider: '>';
+}
+
 .subject {
     font-size: 13px;
     color: #7c3aed;
@@ -28,6 +35,24 @@
     align-items: stretch;
 }
 
+.form-floating * {
+    text-align: center;
+}
+
+.form-floating > label {
+    position: absolute;
+    left: unset;
+    width: 100%;
+} 
+
+.form-floating > .form-control:focus~label,
+.form-floating > .form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+    transform: translateY(-.5rem);
+    width: 100%;
+    font-size: 0.75rem;
+}
+
 .input-group-text {
     background-color: #bcd7fc;
 }
@@ -35,4 +60,10 @@
 .btn {
     align-self: center;
     background-color: #7c3aed;
+}
+
+#math-display {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1rem;
 }

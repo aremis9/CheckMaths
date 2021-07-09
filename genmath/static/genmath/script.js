@@ -5,11 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     var variableinputs = document.getElementsByClassName('variableinputs')[0].children;
     var original = document.getElementsByClassName('variableinput')[0];
 
+    var MQ = MathQuill.getInterface(2);
+    var mathdisplay = document.getElementById('math-display');
+    mathdisplay.style.textAlign = "center"
+    mathdisplay.innerHTML = functioninput.value
+    MQ.StaticMath(mathdisplay);
+
     function isAlphabet(str) {
         return (/[a-zA-Z]/).test(str) && str.length == 1;
     }
 
-    
 
     var variables = [];
     variables.push('x');

@@ -14,6 +14,14 @@
 {% endblock %}
 
 {% block body %}
+    <nav aria-label="breadcrumb" class="notnav">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/genmath">General Mathematics</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Evaluation of Functions</li>
+        </ol>
+    </nav>
+
     <div class="pagehead">
         <h6 class="subject">General Mathematics</h6>
         Evaluation of Functions
@@ -25,8 +33,7 @@
                 <input type="text" class="form-control" id="functioninput" placeholder="Function" value="x^2 + 6x + 9" autocomplete="off">
                 <label for="functioninput">Enter Function</label>
             </div>
-            <div id="math-display"></div>
-            <div><br></div>
+            <div id="math-display">x^2 + 6x + 9</div>
             <div class="variableinputs">
                 <div class="input-group mb-3 variableinput variable-x">
                     <span class="input-group-text">x =</span>
