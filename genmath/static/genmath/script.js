@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return (/[a-zA-Z]/).test(str) && str.length == 1;
     }
 
+    function isNum(num) {
+        return (/[0-9]/).test(num);
+    }
+
 
     var variables = [];
     variables.push('x');
@@ -66,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
     function duplicate(variable) {
         var clone = original.cloneNode(true);
         clone.style.display = "flex";
@@ -85,5 +88,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+
+
+    var varvalues = document.createElement("input");
+    varvalues.setAttribute("hidden", "");
+    varvalues.setAttribute("type", "text")
+    varvalues.setAttribute("name", "variables")
+    functioninput.parentNode.insertBefore(varvalues, functioninput.nextSibling);
+
+    document.getElementById('form').onsubmit = function() {
+        let func = functioninput.value
+        let vars = {}
+        for (variable of variables) {
+            vars[variable] = document.getElementsByName('variable-' + variable)[0].value;
+        }
+        
+        varvalues.setAttribute("value", JSON.stringify(vars))
+    }
 
 })
