@@ -23,6 +23,42 @@
     margin: 10px;
 }
 
+.card {
+    position: absolute;
+    left: 36px;
+    margin-top: 32px;
+    background-color: #7c3aed;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.116) 0px 10px 20px, rgba(0, 0, 0, 0.226) 0px 6px 6px;
+}
+
+.card-right {
+    position: absolute;
+    left: unset;
+    right: 36px;
+}
+
+.card-header {
+    text-align: center;
+    border-bottom: none;
+    color: rgb(220, 232, 245);
+    border-radius: 12px;
+}
+
+.card-body {
+    background-color: rgb(220, 232, 245);
+    align-items: flex-start;
+    border-radius: 12px;
+}
+
+.card-text {
+    font-size: 0.8rem;
+}
+
+span.math-text {
+    color: #7c3aed !important;
+}
+
 .container {
     display: flex;
     justify-content: center;

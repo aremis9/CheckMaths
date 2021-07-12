@@ -6,10 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
     var original = document.getElementsByClassName('variableinput')[0];
 
     var MQ = MathQuill.getInterface(2);
-    var mathdisplay = document.getElementById('math-display');
-    mathdisplay.style.textAlign = "center"
-    mathdisplay.innerHTML = functioninput.value
-    MQ.StaticMath(mathdisplay);
+    // var mathdisplay = document.getElementById('math-display');
+    // mathdisplay.style.textAlign = "center"
+    // mathdisplay.innerHTML = functioninput.value
+    // MQ.StaticMath(mathdisplay);
+
+    var mathdisp = document.getElementsByClassName('math-disp');
+    for (m of mathdisp) {
+        console.log(m)
+        MQ.StaticMath(m)
+    }
 
     function isAlphabet(str) {
         return (/[a-zA-Z]/).test(str) && str.length == 1;
@@ -24,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     variables.push('x');
     functioninput.addEventListener('keyup', (event) => {
 
-        var MQ = MathQuill.getInterface(2);
-        var mathdisplay = document.getElementById('math-display');
-        mathdisplay.innerHTML = functioninput.value
-        MQ.StaticMath(mathdisplay);
+        // var MQ = MathQuill.getInterface(2);
+        // var mathdisplay = document.getElementById('math-display');
+        // mathdisplay.innerHTML = functioninput.value
+        // MQ.StaticMath(mathdisplay);
         if (functioninput.value === "") {
             while (variableinputs.length != 1) {
                 let lastchild = variableinputs[variableinputs.length - 1]

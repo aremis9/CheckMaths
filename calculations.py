@@ -1,16 +1,31 @@
 from sympy import *
 
-def evaluate(func, variables):
-    func = func
+def cleanfunction(function):
+    func = function
     # funclen = [i for i in range(len(func))]
     funclen = len(func)
     i = 0
     while i < funclen:
+
+        # get the expression inside sqrt()
+        # and skip adding '*'
+        if (i + len('sqrt(')) < funclen:
+            if func[i:i + len('sqrt(')] == 'sqrt(':
+                i = i + len('sqrt(')
+                continue
+
+        # get the expression inside Abs()
+        # and skip adding '*'
+        if (i + len('Abs(')) < funclen:
+            if func[i:i + len('Abs(')] == 'Abs(':
+                i = i + len('Abs(')
+                continue
+
         # insert '*' for multiplication
         # if a number is beside a variable
         if (func[i]).isnumeric():
             if i == len(func) - 1:
-                continue
+                break
             if (func[i + 1].isalpha()):
                 func = func[:i + 1] + '*' + func[i + 1:]
 
@@ -21,6 +36,8 @@ def evaluate(func, variables):
                 break
             if (func[i + 1].isalpha()):
                 func = func[:i + 1] + '*' + func[i + 1:]
+            if (func[i + 1].isnumeric()):
+                func = func[:i + 1] + '*' + func[i + 1:]
 
 
         symbols = ['*', '^', '/', '(', ')', ' ']
@@ -29,8 +46,9 @@ def evaluate(func, variables):
         # if a variable or number is beside a '('
         if func[i] == "(":
             if i == 0:
+                i += 1
                 continue
-            if func[i - 1] not in symbols:
+            elif func[i - 1] not in symbols:
                 func = func[:i] + '*' + func[i:]
             elif func[i - 1] == ')':
                 func = func[:i] + '*' + func[i:]
@@ -47,23 +65,31 @@ def evaluate(func, variables):
         i += 1
 
     print(func)
-    answer = Function('f')(func)
+    return func
+
+def evaluate(function, variables):
+    answer = Function('f')(cleanfunction(function))
 
     # substitute the values of the variables to the function
     for v in variables.keys():
         # v = variable, variables[v] = value of variable
-        answer = answer.subs(v, variables[v])
+        answer = answer.subs(v, cleanfunction(variables[v]))
 
+    print(answer)
     return answer
 
 
 
-# func = '2x + x^3 + xy(x + 1)'
-func = '2x + x^3 + xy(x + 1) + xy(3)'
+func = '4x - 2 / 2x + 8'
+# 2^(2a) = 2^(4) = 16
+# 2^2a = (2^2)*a = (2^2)*2 = 8
+# -(4^-3)
+# func = '2x + x^3 + xy(x + 1) + xy(3) / 2'
+# 4 + 8 + 12 + 12 / 2
+# func = '4t'
 variables = {
-    'x': '2',
-    'y': '2'
+    'x': '1'
 }
 
-# print(simplify(func))
+
 print(evaluate(func, variables))
