@@ -30,7 +30,7 @@
 }
 
 .content-body > div {
-    flex-basis: 50%;
+    flex-basis: 0;
     flex-grow: 1;
 }
 
@@ -38,13 +38,17 @@
     box-sizing: border-box;
 }
 
+/* .content-body2 > * {
+    padding-right: 36px;
+} */
+
 
 .card {
     box-sizing: border-box;
     min-width: 286px;
-    margin: 0;
-    margin-left: 36px;
-    margin-right: 36px;
+    margin: 32px 36px;
+    /* margin-left: 36px;
+    margin-right: 36px; */
     background-color: #7c3aed;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.116) 0px 10px 20px, rgba(0, 0, 0, 0.226) 0px 6px 6px;
