@@ -22,68 +22,72 @@
             <li class="breadcrumb-item active" aria-current="page">Evaluation of Functions</li>
         </ol>
     </nav>
-
-    <div class="card text-dark mb-3" style="max-width: 18rem;">
-        <div class="card-header">Take note:</div>
-        <div class="card-body">
-            <p class="card-text">
-                Use '()' for 2 or more digit exponents. <br>
-                <span class="math-text">
-                    x^2a = <span class="math-disp">x^2a</span><br>
-                    x^(2a) = <span class="math-disp">x^2^a</span>
-                </span>
-            </p>
-            <p class="card-text">
-                Use '()' for grouping. <br>
-                <span class="math-text">
-                    4x - 2 / 2x + 8 <br>= <span class="math-disp">4x -\frac{2}{2x} + 8</span><br>
-                    (4x - 2) / (2x + 8) <br>= <span class="math-disp">\frac{4x - 2}{2x + 8}</span>
-                </span>
-            </p>
-            <p class="card-text">
-                Use 'sqrt()' for square root.<br>
-                <span class="math-text">
-                    5x + sqrt(x) = <span class="math-disp">5x + \sqrt x</span>
-                </span>
-            </p>
-            <p class="card-text">
-                Use 'Abs()' for square root (uppercase 'A').<br>
-                <span class="math-text">
-                    9 / Abs(-3) = <span class="math-disp">\frac{9}{|-3|}</span>
-                </span>
-            </p>
-            <h6 class="card-title">Need more help or having issues? <a href=""><span class="math-text">Click here!</span></a></h6>
-        </div>
-    </div>
-    
-    <div class="pagehead">
-        <h6 class="subject">General Mathematics</h6>
-        Evaluation of Functions
-    </div>
-    <div class="container">
-        <form action="" method="POST" class="form" id="form">
-            {% csrf_token %}
-            <div class="form-floating">
-                <input type="text" class="form-control" id="functioninput" placeholder="Function" name="function" value="x^2 + 6x + 9" autocomplete="off">
-                <label for="functioninput">Enter Function</label>
-            </div>
-            <br>
-            <!-- <div id="math-display">x^2 + 6x + 9</div> -->
-            <div class="variableinputs">
-                <div class="input-group mb-3 variableinput variable-x">
-                    <span class="input-group-text">x =</span>
-                    <input type="text" class="form-control vinput" value="4" placeholder="Enter value of 'x'" name="variable-x" autocomplete="off">
+    <div class="content-body">
+        <div class="card-container">
+            <div class="card text-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Take note:</div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Use '()' for 2 or more digit exponents. <br>
+                        <span class="math-text">
+                            x^2a = <span class="math-disp">x^2a</span><br>
+                            x^(2a) = <span class="math-disp">x^2^a</span>
+                        </span>
+                    </p>
+                    <p class="card-text">
+                        Use '()' for grouping. <br>
+                        <span class="math-text">
+                            4x - 2 / 2x + 8 <br>= <span class="math-disp">4x -\frac{2}{2x} + 8</span><br>
+                            (4x - 2) / (2x + 8) <br>= <span class="math-disp">\frac{4x - 2}{2x + 8}</span>
+                        </span>
+                    </p>
+                    <p class="card-text">
+                        Use 'sqrt()' for square root.<br>
+                        <span class="math-text">
+                            5x + sqrt(x) = <span class="math-disp">5x + \sqrt x</span>
+                        </span>
+                    </p>
+                    <p class="card-text">
+                        Use 'Abs()' for square root (uppercase 'A').<br>
+                        <span class="math-text">
+                            9 / Abs(-3) = <span class="math-disp">\frac{9}{|-3|}</span>
+                        </span>
+                    </p>
+                    <h6 class="card-title">Need more help or having issues? <a href=""><span class="math-text">Click here!</span></a></h6>
                 </div>
             </div>
-            <input type="submit" class="btn btn-primary" value="Solve"">
-        </form>
-        <!-- <form class="form-floating">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">f(<input type="text" style="width: 20px;">) =</span>
-                <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" aria-describedby="basic-addon1">
-                <label for="floatingInputValue">Input with value</label>
+        </div>
+        <div class="content-body2">
+            <div class="pagehead">
+                <h6 class="subject">General Mathematics</h6>
+                Evaluation of Functions
             </div>
-        </form> -->
+            <div class="container">
+                <form action="" method="POST" class="form" id="form">
+                    {% csrf_token %}
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="functioninput" placeholder="Function" name="function" value="x^2 + 6x + 9" autocomplete="off">
+                        <label for="functioninput">Enter Function</label>
+                    </div>
+                    <br>
+                    <!-- <div id="math-display">x^2 + 6x + 9</div> -->
+                    <div class="variableinputs">
+                        <div class="input-group mb-3 variableinput variable-x">
+                            <span class="input-group-text">x =</span>
+                            <input type="text" class="form-control vinput" value="4" placeholder="Enter value of 'x'" name="variable-x" autocomplete="off">
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Solve"">
+                </form>
+                <!-- <form class="form-floating">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">f(<input type="text" style="width: 20px;">) =</span>
+                        <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" aria-describedby="basic-addon1">
+                        <label for="floatingInputValue">Input with value</label>
+                    </div>
+                </form> -->
+            </div>
+        </div>
     </div>
 
 {% endblock %}

@@ -23,14 +23,39 @@
     margin: 10px;
 }
 
+.content-body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.content-body > div {
+    flex-basis: 50%;
+    flex-grow: 1;
+}
+
+.content-body2 {
+    box-sizing: border-box;
+}
+
+
 .card {
-    position: absolute;
-    left: 36px;
-    margin-top: 32px;
+    box-sizing: border-box;
+    min-width: 286px;
+    margin: 0;
+    margin-left: 36px;
+    margin-right: 36px;
     background-color: #7c3aed;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.116) 0px 10px 20px, rgba(0, 0, 0, 0.226) 0px 6px 6px;
 }
+
+/* @media screen and (max-width: 641px) {
+    .card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+} */
 
 .card-right {
     position: absolute;
