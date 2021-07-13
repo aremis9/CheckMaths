@@ -64,7 +64,6 @@ def cleanfunction(function):
         funclen = len(func)
         i += 1
 
-    print(func)
     return func
 
 def evaluate(function, variables):
@@ -75,7 +74,6 @@ def evaluate(function, variables):
         # v = variable, variables[v] = value of variable
         answer = answer.subs(v, cleanfunction(variables[v]))
 
-    print(answer)
     return answer
 
 
