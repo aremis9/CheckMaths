@@ -1,6 +1,12 @@
+from checkmath.settings import BASE_DIR
 from django.shortcuts import render
 from django.http import HttpResponse
+from calculations import evaluate
+import os
 import json
+
+
+ROOT = os.path.abspath(os.curdir)
 
 # Create your views here.
 def index(request):
@@ -12,8 +18,20 @@ def fevaluation(request):
         variables = json.loads(request.POST.get("variables"))
 
         if not function or not variables:
-            pass
+            return render(request, 'genmath/fevaluation.html', {
+                'answer': 'Nope'
+            })
+
+        try:
+            answer = evaluate(function, variables)
+        except:
+            answer = "Nope"
 
 
+        return render(request, 'genmath/fevaluation.html', {
+            'answer': answer
+        })
 
-    return render(request, 'genmath/fevaluation.html')
+
+    else:
+        return render(request, 'genmath/fevaluation.html')

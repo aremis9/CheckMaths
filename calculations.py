@@ -67,26 +67,29 @@ def cleanfunction(function):
     return func
 
 def evaluate(function, variables):
-    answer = Function('f')(cleanfunction(function))
+    answer = Function('')(cleanfunction(function))
 
     # substitute the values of the variables to the function
     for v in variables.keys():
         # v = variable, variables[v] = value of variable
         answer = answer.subs(v, cleanfunction(variables[v]))
-
+    # answer = answer[1:len(str(answer))]
+    answer = str(answer)
+    answer = answer[1:len(answer) - 1]
     return answer
 
 
 
-func = '4x - 2 / 2x + 8'
+# func = 'x^2 + 6x + 9 + a'
 # 2^(2a) = 2^(4) = 16
 # 2^2a = (2^2)*a = (2^2)*2 = 8
 # -(4^-3)
-# func = '2x + x^3 + xy(x + 1) + xy(3) / 2'
+func = '2x + x^3 + xy(x + 1) + xy(3) / 2'
 # 4 + 8 + 12 + 12 / 2
 # func = '4t'
 variables = {
-    'x': '1'
+    'x': '3',
+    'a': '2'
 }
 
 

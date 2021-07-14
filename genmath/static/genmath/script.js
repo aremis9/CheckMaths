@@ -13,16 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var mathdisp = document.getElementsByClassName('math-disp');
     for (m of mathdisp) {
-        console.log(m)
         MQ.StaticMath(m)
     }
 
     function isAlphabet(str) {
         return (/[a-zA-Z]/).test(str) && str.length == 1;
-    }
-
-    function isNum(num) {
-        return (/[0-9]/).test(num);
     }
 
 
@@ -37,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (functioninput.value === "") {
             while (variableinputs.length != 1) {
                 let lastchild = variableinputs[variableinputs.length - 1]
-                console.log(lastchild)
                 variableparent.removeChild(lastchild)
         }
     }

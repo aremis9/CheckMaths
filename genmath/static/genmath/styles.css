@@ -38,15 +38,10 @@
     box-sizing: border-box;
 }
 
-/* .content-body2 > * {
-    padding-right: 36px;
-} */
-
-
 .card {
     box-sizing: border-box;
     min-width: 286px;
-    margin: 32px 36px;
+    margin: 32px auto;
     /* margin-left: 36px;
     margin-right: 36px; */
     background-color: #7c3aed;
@@ -61,11 +56,6 @@
     }
 } */
 
-.card-right {
-    position: absolute;
-    left: unset;
-    right: 36px;
-}
 
 .card-header {
     text-align: center;
@@ -86,6 +76,18 @@
 
 span.math-text {
     color: #7c3aed !important;
+}
+
+.sample-eqs {
+    align-items: center;
+}
+
+.sample-eqs .math-disp {
+    font-size: 1.2rem;
+} 
+
+.sample-eqs .math-disp:hover {
+    cursor: pointer !important;
 }
 
 .container {
@@ -132,4 +134,13 @@ span.math-text {
     text-align: center;
     font-size: 1.2rem;
     margin: 1rem;
+}
+
+.answer {
+    text-align: center;
+    /* display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center; */
+
 }

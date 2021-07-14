@@ -25,7 +25,7 @@
     <div class="content-body">
         <div class="card-container">
             <div class="card text-dark mb-3" style="max-width: 18rem;">
-                <div class="card-header">Take note:</div>
+                <div class="card-header">Take note</div>
                 <div class="card-body">
                     <p class="card-text">
                         Use '()' for 2 or more digit exponents. <br>
@@ -79,27 +79,41 @@
                     </div>
                     <input type="submit" class="btn btn-primary" value="Solve"">
                 </form>
-                <!-- <form class="form-floating">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">f(<input type="text" style="width: 20px;">) =</span>
-                        <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" aria-describedby="basic-addon1">
-                        <label for="floatingInputValue">Input with value</label>
-                    </div>
-                </form> -->
             </div>
+            <br>
+            {% if answer == "Nope" %}
+                <div class="answer">
+                    <h5>Hmmm... Invalid input!</h5>
+                    <h6>If your input is valid for you, <a href=""><span class="math-text">click here!</span></a></h6>
+                </div>
+            {%elif answer %}
+                <div class="answer">
+                    <h5>Answer: <span class="math-disp">{{ answer }}</span></h5>
+                </div>
+            {% endif %}
         </div>
         <div class="card-container">
-            <div class="card text-dark mb-3" style="max-width: 18rem;">
-                <div class="card-header"><span style="visibility: hidden;">.</span></div>
-                <div class="card-body">
+            <div class="card text-dark mb-3 card-right" style="max-width: 18rem;">
+                <div class="card-header">Examples</div>
+                <div class="card-body sample-eqs">
                     <p class="card-text">
-                        <h6 class="card-title">Need more help or having issues? <a href=""><span class="math-text">Click here!</span></a></h6>
-                        Use '()' for 2 or more digit exponents. <br>
                         <span class="math-text">
-                            x^2a = <span class="math-disp">x^2a</span><br>
-                            x^(2a) = <span class="math-disp">x^2^a</span>
+                            <a href=""><span class="math-disp">3x - 5</span><br></a>
+                        </span>
+                    </p>        
+                    <p class="card-text">
+                        <span class="math-text">
+                            <a href=""><span class="math-disp">9a + 2^3^a^-^2</span><br></a>
                         </span>
                     </p>
+                    <p class="card-text">
+                        <span class="math-text">
+                            <a href=""><span class="math-disp">\frac{|6d|}{12f + 9u}</span><br></a>
+                        </span>
+                    </p>  
+                    <br>
+                    <h6 class="card-title">Need more help or having issues? <a href=""><span class="math-text">Click here!</span></a></h6>
+
                 </div>
             </div>
         </div>
