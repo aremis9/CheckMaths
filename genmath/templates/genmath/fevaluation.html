@@ -66,7 +66,7 @@
                 <form action="" method="POST" class="form" id="form">
                     {% csrf_token %}
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="functioninput" placeholder="Function" name="function" value="x^2 + 6x + 9" autocomplete="off">
+                        <input type="text" class="form-control" id="functioninput" placeholder="Function" name="function" value="{{ function }}" autocomplete="off">
                         <label for="functioninput">Enter Function</label>
                     </div>
                     <br>
@@ -74,8 +74,20 @@
                     <div class="variableinputs">
                         <div class="input-group mb-3 variableinput variable-x">
                             <span class="input-group-text">x =</span>
-                            <input type="text" class="form-control vinput" value="4" placeholder="Enter value of 'x'" name="variable-x" autocomplete="off">
+                            <input type="text" class="form-control vinput" value="{{ x }}" placeholder="Enter value of 'x'" name="variable-x" autocomplete="off">
                         </div>
+                        {% if variables %}
+                            {% for variable, value in variables.items %}
+                                {% if variable == 'x' %}
+                                    <!-- continue -->
+                                {% else %}
+                                    <div class="input-group mb-3 variableinput variable-{{ variable }}">
+                                        <span class="input-group-text">{{ variable }} =</span>
+                                        <input type="text" class="form-control vinput" value="{{ value }}" placeholder="Enter value of '{{ variable }}'" name="variable-{{ variable }}" autocomplete="off">
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     </div>
                     <input type="submit" class="btn btn-primary" value="Solve"">
                 </form>

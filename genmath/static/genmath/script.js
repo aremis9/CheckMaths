@@ -23,19 +23,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var variables = [];
     variables.push('x');
+
+    for (variableinput of variableinputs) {
+        let vinputclass = variableinput.classList[variableinput.classList.length - 1];
+        let vinputvar = vinputclass.slice(-1);
+        if (!variables.includes(vinputvar)) {
+            variables.push(vinputvar)
+            variables.sort()
+        }
+    }
+
     functioninput.addEventListener('keyup', (event) => {
 
-        // var MQ = MathQuill.getInterface(2);
-        // var mathdisplay = document.getElementById('math-display');
-        // mathdisplay.innerHTML = functioninput.value
-        // MQ.StaticMath(mathdisplay);
+
+        for (i of functioninput.value) {
+
+            if (isAlphabet(i) && !variables.includes(i)) {
+                variables.push(i);
+                variables.sort();
+                // console.log(variables);
+                duplicate(i)
+            }
+        }
+
         if (functioninput.value === "") {
             while (variableinputs.length != 1) {
                 let lastchild = variableinputs[variableinputs.length - 1]
                 variableparent.removeChild(lastchild)
+            }
         }
-    }
-        original.children[1].removeAttribute("value");  
+
+        // original.children[1].removeAttribute("value");  
         var key = event['key'];
         // console.log(variables)
         if (isAlphabet(key) && !variables.includes(key)) {
@@ -96,7 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
     varvalues.setAttribute("name", "variables")
     functioninput.parentNode.insertBefore(varvalues, functioninput.nextSibling);
 
-    document.getElementById('form').onsubmit = function() {
+    var form = document.getElementById('form')
+    form.onsubmit = function() {
         let func = functioninput.value
         let vars = {}
         for (variable of variables) {
@@ -104,6 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         varvalues.setAttribute("value", JSON.stringify(vars))
+        form = document.getElementById('form')
     }
+
 
 })
