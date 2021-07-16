@@ -106,29 +106,17 @@ def composite(function1, function2, x):
 
     return answer
 
-# func = 'x^2 + 6x + 9 + a'
-# 2^(2a) = 2^(4) = 16
-# 2^2a = (2^2)*a = (2^2)*2 = 8
-# -(4^-3)
-func = '2x + x^3 + xy(x + 1) + xy(3) / 2'
-# 4 + 8 + 12 + 12 / 2
-# func = '4t'
-variables = {
-    'x': '3',
-    'a': '2'
-}
+
+# def 
 
 
+def findx(function):
+    f = cleanfunction(function)
+    x = Symbol('x')
 
+    return solve(f, x)
 
-f1 = "2x - 2"
-f2 = "x^2 + 3x"
-# print(composite(f1, f2, '-2 + x'))
-
-# x^2 + 8x + 4
-
-
-idk = 'x^2 + y^2 - 2x - 6y'
-print(factor(cleanfunction(idk)))
+f = 'x^2 - 6x + 9'
+print(findx(f))
 
 
