@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block title %}
-    Operations on Functions - CheckMath
+    Composition of Functions - CheckMath
 {% endblock %}
 
 {% block body %}
@@ -19,7 +19,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item"><a href="/genmath">General Mathematics</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Operations on Functions</li>
+            <li class="breadcrumb-item active" aria-current="page">Composition of Functions</li>
         </ol>
     </nav>
     <div class="content-body">
@@ -62,7 +62,7 @@
         <div class="content-body2">
             <div class="pagehead">
                 <h6 class="subject">General Mathematics</h6>
-                Operations on Functions
+                Composition of Functions
                 <div style="font-size: 0.7rem;">Input your functions in terms of 'x'</div>
             </div>
             <div class="container">
@@ -84,13 +84,15 @@
                     </div>
                     <div><br></div>
                     <select class="form-select select-op" aria-label="Default select example" name="operation">
-                        <option value="1" {{ option1 }}>(f + g)(x)</option>
-                        <option value="2" {{ option2 }}>(f - g)(x)</option>
-                        <option value="3" {{ option3 }}>(f * g)(x)</option>
-                        <option value="4" {{ option4 }}>(f / g)(x)</option>
+                        <option value="1" selected disabled>f(g(x))</option>
                     </select>
                     <div><br></div>
                     <input type="submit" class="btn btn-primary" value="Solve"">
+                    <div><br><br></div>
+                    <div style="font-size: 0.9rem; text-align: center;">
+                        f(g(x)) is the same as (f ◦ g)(x)<br>
+                        but not g(f(x)) or (g ◦ f)(x)
+                    </div>
                 </form>
             </div>
             <div><br></div>
@@ -134,9 +136,6 @@
                 </div>
             </div>
 
-            <div class="card-right next">
-                <a href="{% url 'genmath:fcomposite' %}">Composition of Functions →</a>
-            </div>
         </div>
     </div>
 

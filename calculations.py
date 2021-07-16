@@ -85,12 +85,25 @@ def operate(function1, function2, x, operation):
     f1 = str(Function('')(cleanfunction(function1)))
     f2 = str(Function('')(cleanfunction(function2)))
     expression = f1 + operation + f2
-    answer = str(simplify(expression))
+    answer = simplify(expression)
+    answer = str(cancel(answer))
     answer = evaluate(answer, {'x': x})
     # answer = str(answer.subs(answer, x))
     # answer = answer[1:len(answer) - 1]
     # answer = answer.replace("**", "^")
     # answer = answer.replace("*", "")
+    return answer
+
+
+def composite(function1, function2, x):
+    f1 = str(Function('')(cleanfunction(function1)))
+    f2 = str(Function('')(cleanfunction(function2)))
+    answer = evaluate(f1, {'x': f2})
+    answer = evaluate(answer, {'x': x})
+    answer = str(simplify(cleanfunction(answer)))
+    answer = answer.replace("**", "^")
+    answer = answer.replace("*", "")
+
     return answer
 
 # func = 'x^2 + 6x + 9 + a'
@@ -106,12 +119,12 @@ variables = {
 }
 
 
-# print(evaluate(func, variables))
 
 
-f1 = "x^2 + 6x + 9"
-f2 = "2x - 5"
-operation = '+'
-print(operate(f1, f2, '2', operation))
+f1 = "2x - 2"
+f2 = "x^2 + 3x"
+print(composite(f1, f2, '-2 + x'))
 
 # x^2 + 8x + 4
+
+

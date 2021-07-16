@@ -138,4 +138,47 @@ def foperations(request):
 
 
 def fcomposite(request):
-    pass
+    
+    if request.method == "POST":
+
+        try:
+            function1 = request.POST.get("function1")
+            function2 = request.POST.get("function2")
+            x = request.POST.get("variable-x")
+        except:
+            return render(request, 'genmath/fcomposite.html', {
+                'function1': '3x + 2',
+                'function2': '2x^2 + 5',
+                'x': '2',
+                'answer': 'Nope'
+            })
+
+        if not function1 or not function2:
+            return render(request, 'genmath/fcomposite.html', {
+                'function1': '',
+                'function2': '',
+                'x': '',
+                'answer': 'Nope'
+            })
+
+        if not x:
+            x = 'x'
+
+        try:
+            answer = calc.composite(function1, function2, x)
+        except:
+            answer = "Nope"
+
+
+        return render(request, 'genmath/fcomposite.html', {
+                'function1': function1,
+                'function2': function2,
+                'x': x,
+                'answer': answer
+            })
+    else:
+        return render(request, 'genmath/fcomposite.html', {
+                'function1': '3x + 2',
+                'function2': '2x^2 + 5',
+                'x': '2',
+            })
