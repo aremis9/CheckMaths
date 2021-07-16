@@ -76,9 +76,22 @@ def evaluate(function, variables):
     # answer = answer[1:len(str(answer))]
     answer = str(answer)
     answer = answer[1:len(answer) - 1]
+    answer = answer.replace("**", "^")
+    answer = answer.replace("*", "")
     return answer
 
 
+def operate(function1, function2, x, operation):
+    f1 = str(Function('')(cleanfunction(function1)))
+    f2 = str(Function('')(cleanfunction(function2)))
+    expression = f1 + operation + f2
+    answer = str(simplify(expression))
+    answer = evaluate(answer, {'x': x})
+    # answer = str(answer.subs(answer, x))
+    # answer = answer[1:len(answer) - 1]
+    # answer = answer.replace("**", "^")
+    # answer = answer.replace("*", "")
+    return answer
 
 # func = 'x^2 + 6x + 9 + a'
 # 2^(2a) = 2^(4) = 16
@@ -93,4 +106,12 @@ variables = {
 }
 
 
-print(evaluate(func, variables))
+# print(evaluate(func, variables))
+
+
+f1 = "x^2 + 6x + 9"
+f2 = "2x - 5"
+operation = '+'
+print(operate(f1, f2, '2', operation))
+
+# x^2 + 8x + 4

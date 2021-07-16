@@ -1,9 +1,9 @@
 from re import X
 from checkmath.settings import BASE_DIR
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from calculations import evaluate
+import calculations as calc
 import os
 import json
 
@@ -13,6 +13,7 @@ ROOT = os.path.abspath(os.curdir)
 # Create your views here.
 def index(request):
     return render(request, 'genmath/index.html')
+
 
 def fevaluation(request):
     x = 4
@@ -41,15 +42,10 @@ def fevaluation(request):
         
 
         try:
-            answer = evaluate(function, variables)
+            answer = calc.evaluate(function, variables)
         except:
             answer = "Nope"
 
-        # vlist = []
-        # for v in variables.keys():
-        #     vlist.append({
-        #         'variable':
-        #     })
 
         return render(request, 'genmath/fevaluation.html', {
             'function': function,
@@ -64,3 +60,82 @@ def fevaluation(request):
             'x': x,
             'function': 'x^2 + 6x + 9'
         })
+
+
+def foperations(request):
+    selectedop = '1'
+    if request.method == "POST":
+        operations = {
+            '1': '+',
+            '2': '-',
+            '3': '*',
+            '4': '/'
+        }
+
+        try:
+            function1 = request.POST.get("function1")
+            function2 = request.POST.get("function2")
+            x = request.POST.get("variable-x")
+            operation = request.POST.get("operation")
+            selectedop = 'option' + operation
+        except:
+            return render(request, 'genmath/foperations.html', {
+                'function1': 'x^2 + 6x + 9',
+                'function2': '2x - 5',
+                'x': 'x',
+                f'{selectedop}': 'selected',
+                'answer': 'Nope'
+            })
+
+        if not function1 or not function2:
+            return render(request, 'genmath/foperations.html', {
+                'function1': '',
+                'function2': '',
+                'x': '',
+                f'{selectedop}': 'selected',
+                'answer': 'Nope'
+            })
+
+        if not x:
+            x = 'x'
+
+        if operation not in operations.keys():
+            return render(request, 'genmath/foperations.html', {
+                'function1': function1,
+                'function2': function2,
+                'x': x,
+                f'{selectedop}': 'selected',
+                'answer': 'Invalid operation! Maybe try not to inspect the element?'
+            })
+
+        for key, value in operations.items():
+            if operation == key:
+                operation = value
+
+        try:
+            answer = calc.operate(function1, function2, x, operation)
+        except:
+            answer = "Nope"
+        print(f"{selectedop}")
+        print(answer)
+
+
+        return render(request, 'genmath/foperations.html', {
+                'function1': function1,
+                'function2': function2,
+                'x': x,
+                f'{selectedop}': 'selected',
+                'answer': answer
+            })
+
+    else:
+        return render(request, 'genmath/foperations.html', {
+            'function1': 'x^2 + 6x + 9',
+            'function2': '2x - 5',
+            f'{selectedop}': 'selected',
+            'x': 'x',
+        })
+
+
+def fcomposite(request):
+    pass

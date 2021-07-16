@@ -82,14 +82,6 @@ span.math-text {
     align-items: center;
 }
 
-.sample-eqs .math-disp {
-    font-size: 1.2rem;
-} 
-
-.sample-eqs .math-disp:hover {
-    cursor: pointer !important;
-}
-
 .container {
     display: flex;
     justify-content: center;
@@ -138,9 +130,22 @@ span.math-text {
 
 .answer {
     text-align: center;
-    /* display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center; */
+}
 
+.next {
+    margin-top: 10%;
+    text-align: center;
+    align-self: flex-end;
+}
+
+
+/* Operations on Functions Additionals */
+
+.form-select {
+    align-self: center;
+    width: auto;
+}
+
+.selected-op {
+    display: none;
 }
