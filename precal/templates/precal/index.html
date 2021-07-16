@@ -1,0 +1,41 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'genmath/styles.css' %}" type="text/css">
+{% endblock %}
+
+{% block title %}
+    General Mathematics - CheckMath
+{% endblock %}
+
+{% block body %}
+    <div class="pagehead">
+        <h6 class="subject">General Mathematics</h6>
+        Select a topic:
+    </div>
+    <div class="col-12 choices">
+        <a href="{% url 'genmath:fevaluation' %}" class="btn btn-primary">Evaluation of Functions</a>
+        <a href="{% url 'genmath:foperations' %}" class="btn btn-primary">Operations on Functions <br> (add, subtract, multiply, divide)</a>
+        <a href="{% url 'genmath:fcomposite' %}" class="btn btn-primary">Composition of Functions</a>
+        <div style="color: rgb(168, 169, 170);">
+            <br>
+            <br>
+            Other topics are coming soon!
+        </div>
+        <!-- <a href="" class="btn btn-primary">Topic</a>
+        <a href="" class="btn btn-primary">Topic</a>
+        <a href="" class="btn btn-primary">Topic</a> -->
+    </div>
+    
+
+
+
+
+
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+{% endblock %}

@@ -21,10 +21,9 @@
         </div>
         <div class="col">
             <div class="card h-100">
-                <img src="{% static 'main/img/precal.jpg' %}" class="card-img-top blurred" alt="...">
+                <img src="{% static 'main/img/precal.jpg' %}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <button type="button" class="btn btn-outline-primary disabled">Pre-Calculus</button>
-                    <span class="badge rounded-pill bg-secondary comingsoon">Coming Soon</span>
+                    <button type="button" onclick="location.href='{% url 'precal:index' %}';" class="btn btn-outline-primary">Pre-Calculus</button>
                 </div>
             </div>
         </div>

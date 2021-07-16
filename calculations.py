@@ -123,8 +123,12 @@ variables = {
 
 f1 = "2x - 2"
 f2 = "x^2 + 3x"
-print(composite(f1, f2, '-2 + x'))
+# print(composite(f1, f2, '-2 + x'))
 
 # x^2 + 8x + 4
+
+
+idk = 'x^2 + y^2 - 2x - 6y'
+print(factor(cleanfunction(idk)))
 
 
