@@ -43,12 +43,14 @@
                     </p>
                     <p class="card-text">
                         Use 'sqrt()' for square root.<br>
+                        Leave the variables 's', 'q', 'r', 't' empty <br>
                         <span class="math-text">
                             5x + sqrt(x) = <span class="math-disp">5x + \sqrt x</span>
                         </span>
                     </p>
                     <p class="card-text">
                         Use 'Abs()' for square root (uppercase 'A').<br>
+                        Leave the variables 'A', 'b', 's' empty <br>
                         <span class="math-text">
                             9 / Abs(-3) = <span class="math-disp">\frac{9}{|-3|}</span>
                         </span>
@@ -93,38 +95,42 @@
                 </form>
             </div>
             <br>
-            {% if answer == "Nope" %}
-                <div class="answer">
-                    <h5>Hmmm... Invalid input!</h5>
-                    <h6>If your input is valid for you, <a href=""><span class="math-text">click here!</span></a></h6>
-                </div>
-            {%elif answer %}
-                <div class="answer">
-                    <h5>Answer: <span class="math-disp">{{ answer }}</span></h5>
-                </div>
-            {% endif %}
         </div>
         <div class="card-container">
             <div class="card text-dark mb-3 card-right" style="max-width: 18rem;">
-                <div class="card-header">Examples</div>
+                <div class="card-header">Answer</div>
                 <div class="card-body sample-eqs">
-                    <p class="card-text">
+                    
+                    {% if answer == "Nope" %}
+                        <div class="answer">
+                            <h6>Hmmm... Invalid input!</h6>
+                            <h6>If your input is valid for you, <a href=""><span class="math-text">click here!</span></a></h6>
+                        </div>
+                    {% elif answer %}
+                        <div class="answer">
+                            <h5><span class="math-disp">{{ answer }}</h5>
+                        </div>
+                    {% else %}
+                        Click solve
+                    {% endif %}
+
+                    <!-- <p class="card-text">
                         <span class="math-text">
-                            <a href=""><span class="math-disp">3x - 5</span><br></a>
+                            <span class="math-disp" id="sample1">3x - 5</span><br>
                         </span>
                     </p>        
                     <p class="card-text">
                         <span class="math-text">
-                            <a href=""><span class="math-disp">9a + 2^3^a^-^2</span><br></a>
+                            <span class="math-disp" id="sample2">9a + 2^3^a^-^2</span><br>
                         </span>
                     </p>
                     <p class="card-text">
                         <span class="math-text">
-                            <a href=""><span class="math-disp">\frac{|6d|}{12f + 9u}</span><br></a>
+                            <span class="math-disp" id="sample3">\frac{|6d|}{12f + 9u}</span><br>
                         </span>
                     </p>  
                     <br>
-                    <h6 class="card-title">Need more help or having issues? <a href=""><span class="math-text">Click here!</span></a></h6>
+                    <h6 class="card-title">Need more help or having issues? <a href=""><span class="math-text">Click here!</span></a></h6> -->
 
                 </div>
             </div>

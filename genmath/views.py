@@ -18,7 +18,14 @@ def fevaluation(request):
     x = 4
     if request.method == "POST":
         function = request.POST.get("function")
-        variables = json.loads(request.POST.get("variables"))
+        try:
+            variables = json.loads(request.POST.get("variables"))
+        except:
+            return render(request, 'genmath/fevaluation.html', {
+                'function': 'x^2 + 6x + 9',
+                'x': x,
+                'answer': 'Nope'
+            })
 
         if 'x' not in variables:
             x = 0
@@ -31,6 +38,7 @@ def fevaluation(request):
                 'x': x,
                 'answer': 'Nope'
             })
+        
 
         try:
             answer = evaluate(function, variables)

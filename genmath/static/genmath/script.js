@@ -33,20 +33,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    if (!functioninput.value.includes('x')) {
+        original.style.display = 'none'
+    }
+
     functioninput.addEventListener('keyup', (event) => {
-
-
-        for (i of functioninput.value) {
-
-            if (isAlphabet(i) && !variables.includes(i)) {
-                variables.push(i);
+        fvalue = functioninput.value
+        for (i in fvalue) {
+            if (isAlphabet(fvalue.slice(i)) && !variables.includes(fvalue.slice(i))) {
+                variables.push(fvalue.slice(i));
                 variables.sort();
                 // console.log(variables);
-                duplicate(i)
+                duplicate(fvalue.slice(i))
             }
         }
 
         if (functioninput.value === "") {
+            original.getElementsByClassName('vinput')[0].value = ''
+            original.style.display = 'none  '
             while (variableinputs.length != 1) {
                 let lastchild = variableinputs[variableinputs.length - 1]
                 variableparent.removeChild(lastchild)
@@ -56,6 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // original.children[1].removeAttribute("value");  
         var key = event['key'];
         // console.log(variables)
+        if (key == 'A') {
+            console.log('a')
+        }
+
         if (isAlphabet(key) && !variables.includes(key)) {
             variables.push(key);
             variables.sort();
