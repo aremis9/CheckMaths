@@ -80,8 +80,8 @@ def foperations(request):
             selectedop = 'option' + operation
         except:
             return render(request, 'genmath/foperations.html', {
-                'function1': 'x^2 + 6x + 9',
-                'function2': '2x - 5',
+                'function1': 'x^2 + 6x + 8',
+                'function2': 'x + 2',
                 'x': 'x',
                 f'{selectedop}': 'selected',
                 'answer': 'Nope'
@@ -130,8 +130,8 @@ def foperations(request):
 
     else:
         return render(request, 'genmath/foperations.html', {
-            'function1': 'x^2 + 6x + 9',
-            'function2': '2x - 5',
+            'function1': 'x^2 + 6x + 8',
+            'function2': 'x + 2',
             f'{selectedop}': 'selected',
             'x': 'x',
         })
