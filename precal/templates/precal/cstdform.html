@@ -71,15 +71,14 @@
                     <div class="centerinput">
                         <div>
                             Center = 
-                            (<span><input type="text" name="xcoord" value="{{ xcoord }}" class="centercoord" placeholder="x"></span>, 
-                            <span><input type="text" name="ycoord" value="{{ ycoord }}" class="centercoord" placeholder="y"></span>)
+                            (<span><input type="text" name="xcoord" value="{{ xcoord }}" class="centercoord" placeholder="x" autocomplete="off"></span>, 
+                            <span><input type="text" name="ycoord" value="{{ ycoord }}" class="centercoord" placeholder="y" autocomplete="off"></span>)
                         </div>
                     </div>
                     <div><br></div>
                     <div class="centerinput radiusinput">
                         <div>
-                            Radius = <span><input type="text" name="radius" value="{{ radius }}" class="radius"></span>
-                            <div style="font-size: 0.7rem;">Input radius in degrees</div>
+                            Radius = <span><input type="text" name="radius" value="{{ radius }}" class="radius" autocomplete="off"></span>
                         </div>
                     </div>
                     <div><br></div>
@@ -128,6 +127,9 @@
                 </div>
             </div>
 
+            <div class="card-right next">
+                <a href="{% url 'genmath:foperations' %}">Circle: General Form →</a>
+            </div>
         </div>
     </div>
 

@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block body %}
-    
     <div class="pagehead">
         Select a subject:
     </div>
@@ -38,19 +37,30 @@
         </div>
     </div>
 
-
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
-                <button type="button" class="btn btn-outline-primary">General Mathematics</button>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <button type="button" class="btn btn-outline-primary">Pre-Calculus</button>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <button type="button" class="btn btn-outline-primary">Basic Calculus</button>
+<div class="py-2">
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="color: rgb(197, 5, 5);">Disclaimer!</h5>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            This website doesn't encourage any forms of academic dishonesty. <br><br>
+                            Use at your own risk.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div> -->
-
+    </div>
+    <script type="text/javascript">
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'), {})
+        myModal.toggle()
+    </script>
 {% endblock %}

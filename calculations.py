@@ -1,4 +1,5 @@
 from sympy import *
+from sympy.geometry.util import find
 
 def cleanfunction(function):
     func = function
@@ -130,6 +131,9 @@ def cstdform(xcoord, ycoord, radius):
     else:
         ycoord = ' + ' + str(ycoord)
 
+    if '-' in str(radius):
+        answer = 'Radius cannot be negative!'
+
     if xcoord[-2:] == '.0':
         xcoord = xcoord[0:-2]
     
@@ -141,6 +145,27 @@ def cstdform(xcoord, ycoord, radius):
 
     answer = f'(x{xcoord})^2 + (y{ycoord})^2 = {radius}'
     return answer
+
+
+def cgrlform(xcoord, ycoord, radius):
+    try:
+        xcoord = float(xcoord)
+        ycoord = float(ycoord)
+        radius = float(radius)
+    except:
+        answer = 'Nope'
+        return answer
+
+    stdform = cstdform(xcoord, ycoord, radius)
+    print(stdform)
+    stdform = stdform[0:stdform.find('=')] + f'- {radius**2}'
+    answer = str(expand(cleanfunction(stdform)))
+    answer = answer.replace("**", "^")
+    answer = answer.replace("*", "")
+    if str(answer)[-2:] == '.0':
+        answer = str(answer)[0:-2]
+    return answer
+
 
 
 def findx(function):
@@ -156,4 +181,4 @@ def findx(function):
 # y = Symbol('y')
 # print(expand(x**2 + 6*x))
 
-print(cstdform(2, -5, 3))
+print(cgrlform(5, -2, 3))
