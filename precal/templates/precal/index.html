@@ -15,13 +15,12 @@
         Select a topic:
     </div>
     <div class="col-12 choices">
-        <div>Circle</div>
+        <a href="{% url 'precal:graphing' %}" class="btn btn-primary">Graphing Conic Sections</a>
+        <div class="topics">Circle</div>
         <a href="{% url 'precal:cstdform' %}" class="btn btn-primary">Standard Form</a>
         <a href="{% url 'precal:cgrlform' %}" class="btn btn-primary">General Form</a>
-        <a href="{% url 'genmath:fcomposite' %}" class="btn btn-primary">Graphing</a>
         <div class="topics">Parabola</div>
-        <a href="{% url 'genmath:fevaluation' %}" class="btn btn-primary">Finding Roots</a>
-        <a href="{% url 'genmath:fcomposite' %}" class="btn btn-primary">Graphing</a>
+        <a href="{% url 'precal:proots' %}" class="btn btn-primary">Finding Roots</a>
         <div style="color: rgb(168, 169, 170);">
             <br>
             <br>

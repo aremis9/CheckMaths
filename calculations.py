@@ -171,8 +171,11 @@ def cgrlform(xcoord, ycoord, radius):
 def findx(function):
     f = cleanfunction(function)
     x = Symbol('x')
-
-    return solve(f, x)
+    answer = str(solve(f, x))
+    answer = answer.replace("I", "i")
+    answer = answer.replace("**", "^")
+    answer = answer.replace("*", "")
+    return answer
 
 # f = 'x^2 - 6x + 9'
 # print(findx(f))

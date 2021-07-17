@@ -61,10 +61,10 @@ def cgrlform(request):
                 'answer': 'Nope'
             })
 
-        # try:
-        answer = calc.cgrlform(xcoord, ycoord, radius)
-        # except:
-        #     answer = 'Nope'
+        try:
+            answer = calc.cgrlform(xcoord, ycoord, radius)
+        except:
+            answer = 'Nope'
 
         print(answer)
         return render(request, "precal/cgrlform.html", {
@@ -79,4 +79,60 @@ def cgrlform(request):
             'xcoord': '5',
             'ycoord': '-2',
             'radius': '3',
+        })
+
+
+def graphing(request):
+    if request.method == "POST":
+        function = request.POST.get("function")
+
+        if not function:
+            return render(request, "precal/graphing.html", {
+                'function': '',
+                'answer': 'Nope'
+            })
+
+        try:
+            answer = calc.evaluate(function, {})
+        except:
+            answer = 'Nope'
+            return render(request, "precal/graphing.html", {
+                'function': function,
+                'answer': 'Nope'
+            })
+
+        return render(request, "precal/graphing.html", {
+            'function': function
+        })
+
+    else:
+        return render(request, "precal/graphing.html", {
+            'function': '(x + 2)^2 + (y - 1)^2 = 25'
+        })
+
+
+def proots(request):
+    if request.method == "POST":
+        function = request.POST.get("function")
+
+        if not function:
+            return render(request, "precal/proots.html", {
+                'function': '',
+                'answer': 'Nope'
+            })
+
+        try:
+            answer = calc.findx(function)
+        except:
+            answer = 'Nope'
+
+        print(answer)
+        return render(request, "precal/proots.html", {
+                'function': function,
+                'answer': answer
+            })
+
+    else:
+        return render(request, 'precal/proots.html', {
+            'function': '2x^2 - 8x + 6',
         })

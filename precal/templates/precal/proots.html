@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="{% static 'precal/styles.css' %}" type="text/css">
     <script src="{% static 'genmath/script-foperations.js' %}" type="text/javascript"></script>
 
+    <!-- Desmos -->
+    <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+
     <!-- MathQuill -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.css" integrity="sha512-vPg9GqsZZ4LHv9BkFfZSXt7y4D7YaARPU2JFmpZug4EgtJJrumytMAFZkNSk2LSyqWir0TNbh2tBq7UJIMxvlA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,7 +16,7 @@
 {% endblock %}
 
 {% block title %}
-    Circle: Standard Form - CheckMath
+    Parabola: Finding Roots - CheckMath
 {% endblock %}
 
 {% block body %}
@@ -20,7 +24,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item"><a href="/precal">Pre-Calculus</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Circle: Standard Form</li>
+            <li class="breadcrumb-item active" aria-current="page">Parabola: Finding Roots</li>
         </ol>
     </nav>
     <div class="content-body">
@@ -63,24 +67,17 @@
         <div class="content-body2">
             <div class="pagehead">
                 <h6 class="subject">Pre-Calculus</h6>
-                Circle: Standard Form
+                Parabola: Finding Roots
+                <div style="font-size: 0.7rem;">Input your function in terms of 'x'</div>
             </div>
             <div class="container">
-                <form action="" method="POST" class="form" id="form">
+                <form action="" method="POST" class="form" id="form" style="width: 90%;">
                     {% csrf_token %}
-                    <div class="centerinput">
-                        <div>
-                            Center = 
-                            (<span><input type="text" name="xcoord" value="{{ xcoord }}" class="centercoord" placeholder="x" autocomplete="off"></span>, 
-                            <span><input type="text" name="ycoord" value="{{ ycoord }}" class="centercoord" placeholder="y" autocomplete="off"></span>)
-                        </div>
+                    <div class="form-floating" style="width: auto;">
+                        <input type="text" class="form-control" id="functioninput" placeholder="Function" name="function" value="{{ function }}" autocomplete="off">
+                        <label for="functioninput">Standard Form</label>
                     </div>
-                    <div><br></div>
-                    <div class="centerinput radiusinput">
-                        <div>
-                            Radius = <span><input type="text" name="radius" value="{{ radius }}" class="radius" autocomplete="off"></span>
-                        </div>
-                    </div>
+                    <div style="font-size: 0.7rem; margin-top: 10px; text-align: center;">Standard Form of Parabola is: <span class="math-disp">ax^2 + bx + c</span></div>
                     <div><br></div>
                     <input type="submit" class="btn btn-primary" value="Solve"">
                     <div><br><br></div>
@@ -105,32 +102,12 @@
                     {% else %}
                         Click solve
                     {% endif %}
-
-                    <!-- <p class="card-text">
-                        <span class="math-text">
-                            <span class="math-disp" id="sample1">3x - 5</span><br>
-                        </span>
-                    </p>        
-                    <p class="card-text">
-                        <span class="math-text">
-                            <span class="math-disp" id="sample2">9a + 2^3^a^-^2</span><br>
-                        </span>
-                    </p>
-                    <p class="card-text">
-                        <span class="math-text">
-                            <span class="math-disp" id="sample3">\frac{|6d|}{12f + 9u}</span><br>
-                        </span>
-                    </p>  
-                    <br>
-                    <h6 class="card-title">Need more help or having issues? <a href=""><span class="math-text">Click here!</span></a></h6> -->
-
                 </div>
             </div>
 
-            <div class="card-right next">
-                <a href="{% url 'precal:cgrlform' %}">Circle: General Form →</a>
-            </div>
         </div>
     </div>
+
+
 
 {% endblock %}
