@@ -37,5 +37,40 @@ def limits(request):
         return render(request, 'bscal/limits.html')
 
 
-def differential(request):
-    pass
+def differentiation(request):
+    if request.method == "POST":
+
+        function = request.POST.get("function")
+        nth = request.POST.get("nth")
+
+        if not function:
+            return render(request, "bscal/differentiation.html", {
+                'function': '',
+                'nth': '1',
+                'answer': 'Nope'
+            })
+
+        try:
+            nth = int(nth)
+        except:
+            return render(request, "bscal/differentiation.html", {
+                'function': '',
+                'nth': '1',
+                'answer': 'Nope'
+            })
+
+        try:
+            answer = calc.differentiate(function, nth)
+        except:
+            answer = 'Nope'
+
+
+        return render(request, "bscal/differentiation.html", {
+            'function': function,
+            'nth': str(nth),
+            'answer': answer
+        })
+
+
+    else:
+        return render(request, 'bscal/differentiation.html')

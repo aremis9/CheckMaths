@@ -191,6 +191,23 @@ def getlimit(function, c):
     return answer
     
 
+def differentiate(function, nth):
+    f = cleanfunction(function)
+    x = Symbol('x')
+    n = int(nth)
+    answer = expand(f)
+
+    for i in range(n):
+        answer = diff(answer, x)
+
+    answer = str(answer)
+    answer = answer.replace("**", "^")
+    answer = answer.replace("*", "")
+
+    return answer
+
+
+
 
 # f = 'x^2 - 6x + 9'
 # print(findx(f))
@@ -202,4 +219,8 @@ def getlimit(function, c):
 # answer = getlimit("(x + 1)/(Abs(x + 1))", '-1')
 # answer = getlimit("(6 + 4x)/(x^2 + 1)", '-3')
 
+# print(answer)
+
+
+# answer = differentiate('x(3x^2 - 9)', 1)
 # print(answer)
