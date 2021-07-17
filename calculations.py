@@ -75,7 +75,10 @@ def evaluate(function, variables):
         answer = answer.subs(v, cleanfunction(variables[v]))
     # answer = answer[1:len(str(answer))]
     answer = str(answer)
+    # remove the parenthesis
     answer = answer[1:len(answer) - 1]
+
+    # replace for muggle readability
     answer = answer.replace("**", "^")
     answer = answer.replace("*", "")
     return answer
@@ -107,7 +110,37 @@ def composite(function1, function2, x):
     return answer
 
 
-# def 
+def cstdform(xcoord, ycoord, radius):
+    try:
+        xcoord = - float(xcoord)
+        ycoord = -float(ycoord)
+        radius = (float(radius))**2
+    except:
+        answer = 'Nope'
+        return answer
+
+
+    if '-' in str(xcoord):
+        xcoord = ' - ' + str(xcoord)[1:]
+    else:
+        xcoord = ' + ' + str(xcoord)
+
+    if '-' in str(ycoord):
+        ycoord = ' - ' + str(ycoord)[1:]
+    else:
+        ycoord = ' + ' + str(ycoord)
+
+    if xcoord[-2:] == '.0':
+        xcoord = xcoord[0:-2]
+    
+    if ycoord[-2:] == '.0':
+        ycoord = ycoord[0:-2]
+
+    if str(radius)[-2:] == '.0':
+        radius = str(radius)[0:-2]
+
+    answer = f'(x{xcoord})^2 + (y{ycoord})^2 = {radius}'
+    return answer
 
 
 def findx(function):
@@ -116,7 +149,11 @@ def findx(function):
 
     return solve(f, x)
 
-f = 'x^2 - 6x + 9'
-print(findx(f))
+# f = 'x^2 - 6x + 9'
+# print(findx(f))
 
+# x = Symbol('x')
+# y = Symbol('y')
+# print(expand(x**2 + 6*x))
 
+print(cstdform(2, -5, 3))

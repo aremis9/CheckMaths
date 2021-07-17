@@ -2,6 +2,7 @@
 {% load static %}
 {% block head %}
     <link rel="stylesheet" href="{% static 'genmath/styles.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'precal/styles.css' %}" type="text/css">
 {% endblock %}
 
 {% block title %}
@@ -14,9 +15,13 @@
         Select a topic:
     </div>
     <div class="col-12 choices">
-        <a href="{% url 'genmath:fevaluation' %}" class="btn btn-primary">Evaluation of Functions</a>
-        <a href="{% url 'genmath:foperations' %}" class="btn btn-primary">Operations on Functions <br> (add, subtract, multiply, divide)</a>
-        <a href="{% url 'genmath:fcomposite' %}" class="btn btn-primary">Composition of Functions</a>
+        <div>Circle</div>
+        <a href="{% url 'precal:cstdform' %}" class="btn btn-primary">Standard Form</a>
+        <a href="{% url 'genmath:foperations' %}" class="btn btn-primary">General Form</a>
+        <a href="{% url 'genmath:fcomposite' %}" class="btn btn-primary">Graphing</a>
+        <div class="topics">Parabola</div>
+        <a href="{% url 'genmath:fevaluation' %}" class="btn btn-primary">Finding Roots</a>
+        <a href="{% url 'genmath:fcomposite' %}" class="btn btn-primary">Graphing</a>
         <div style="color: rgb(168, 169, 170);">
             <br>
             <br>

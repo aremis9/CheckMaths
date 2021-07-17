@@ -5,7 +5,7 @@ app_name = "precal"
 urlpatterns = [
     # /genmath/...
     path("", views.index, name="index"),
-    # path("circle/", views.circle, name="circle"),
+    path("circle-standard-form/", views.cstdform, name="cstdform"),
     # path("parabola/", views.parabola, name="parabola")
 
 ]

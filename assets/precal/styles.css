@@ -149,3 +149,12 @@ span.math-text {
 .selected-op {
     display: none;
 }
+
+
+/* Precal */
+
+.topics {
+    margin-top: 10px;
+    color: aqua;
+    background-color: black !important;
+}
