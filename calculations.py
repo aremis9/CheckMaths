@@ -166,7 +166,6 @@ def cgrlform(xcoord, ycoord, radius):
     return answer
 
 
-
 def findx(function):
     f = cleanfunction(function)
     x = Symbol('x')
@@ -176,6 +175,23 @@ def findx(function):
     answer = answer.replace("*", "")
     return answer
 
+
+def getlimit(function, c):
+    f = cleanfunction(function)
+    x = Symbol('x')
+
+    answerp = str(limit(f, x, c, '+'))
+    answern = str(limit(f, x, c, '-'))
+
+    if answerp == answern:
+        answer = answerp
+    else:
+        answer = 'none'
+
+    return answer
+    
+
+
 # f = 'x^2 - 6x + 9'
 # print(findx(f))
 
@@ -183,4 +199,7 @@ def findx(function):
 # y = Symbol('y')
 # print(expand(x**2 + 6*x))
 
-# print(cgrlform(5, -2, 3))
+# answer = getlimit("(x + 1)/(Abs(x + 1))", '-1')
+# answer = getlimit("(6 + 4x)/(x^2 + 1)", '-3')
+
+# print(answer)

@@ -42,10 +42,6 @@ def cstdform(request):
             'radius': '3',
         })
 
-    
-def index(request):
-    return render(request, 'precal/index.html')
-
 
 def cgrlform(request):
     if request.method == "POST":

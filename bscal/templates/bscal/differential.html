@@ -16,15 +16,15 @@
 {% endblock %}
 
 {% block title %}
-    Parabola: Finding Roots - CheckMath
+    Differentiation - CheckMath
 {% endblock %}
 
 {% block body %}
     <nav aria-label="breadcrumb" class="notnav">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/precal">Pre-Calculus</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Parabola: Finding Roots</li>
+            <li class="breadcrumb-item"><a href="/bscal">Basic Calculus</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Differentiation</li>
         </ol>
     </nav>
     <div class="content-body">
@@ -66,18 +66,17 @@
         </div>
         <div class="content-body2">
             <div class="pagehead">
-                <h6 class="subject">Pre-Calculus</h6>
-                Parabola: Finding Roots
+                <h6 class="subject">Basic Calculus</h6>
+                Limits
                 <div style="font-size: 0.7rem;">Input your function in terms of 'x'</div>
             </div>
             <div class="container">
                 <form action="" method="POST" class="form" id="form" style="width: 90%;">
                     {% csrf_token %}
-                    <div class="form-floating" style="width: auto;">
-                        <input type="text" class="form-control" id="functioninput" placeholder="Function" name="function" value="{{ function }}" autocomplete="off">
-                        <label for="functioninput">Standard Form</label>
+                    <div class="input-group mb-3 variableinput variable-x">
+                        <span class="input-group-text">f(x) = </span>
+                        <input type="text" class="form-control vinput" value="{{ function }}" placeholder="Enter function" name="function" autocomplete="off">
                     </div>
-                    <div style="font-size: 0.7rem; margin-top: 10px; text-align: center;">Standard Form of Parabola is: <span class="math-disp">ax^2 + bx + c</span></div>
                     <div><br></div>
                     <input type="submit" class="btn btn-primary" value="Solve"">
                     <div><br><br></div>
