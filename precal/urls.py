@@ -3,7 +3,7 @@ from . import views
 
 app_name = "precal"
 urlpatterns = [
-    # /genmath/...
+    # /precal/...
     path("", views.index, name="index"),
     path("graphing/", views.graphing, name="graphing"),
     path("circle-standard-form/", views.cstdform, name="cstdform"),

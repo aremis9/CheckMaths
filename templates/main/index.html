@@ -28,10 +28,9 @@
         </div>
         <div class="col">
             <div class="card h-100">
-                <img src="{% static 'main/img/basiccal.jpg' %}" class="card-img-top blurred" alt="...">
+                <img src="{% static 'main/img/basiccal.jpg' %}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <button type="button" class="btn btn-outline-primary disabled">Basic Calculus</button>
-                    <span class="badge rounded-pill bg-secondary comingsoon">Coming Soon</span>
+                    <button type="button" onclick="location.href='{% url 'bscal:index' %}';" class="btn btn-outline-primary">Basic Calculus</button>
                 </div>
             </div>
         </div>
@@ -41,17 +40,17 @@
         <div class="modal" id="myModal">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header" style="justify-content: center;">
                         <h5 class="modal-title" style="color: rgb(197, 5, 5);">Disclaimer!</h5>
                         <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" style="text-align: center;">
                         <p>
                             This website doesn't encourage any forms of academic dishonesty. <br><br>
                             Use at your own risk.
                         </p>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" style="justify-content: center;">
                         <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
                     </div>

@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='main/index.html'),
         name='home'),
     path('genmath/', include('genmath.urls')),
-    path('precal/', include('precal.urls'))
+    path('precal/', include('precal.urls')),
+    path('bscal/', include('bscal.urls'))
 ]

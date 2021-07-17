@@ -66,7 +66,6 @@ def cgrlform(request):
         except:
             answer = 'Nope'
 
-        print(answer)
         return render(request, "precal/cgrlform.html", {
             'xcoord': xcoord,
             'ycoord': ycoord,
@@ -126,7 +125,6 @@ def proots(request):
         except:
             answer = 'Nope'
 
-        print(answer)
         return render(request, "precal/proots.html", {
                 'function': function,
                 'answer': answer

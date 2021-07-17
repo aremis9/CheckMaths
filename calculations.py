@@ -157,7 +157,6 @@ def cgrlform(xcoord, ycoord, radius):
         return answer
 
     stdform = cstdform(xcoord, ycoord, radius)
-    print(stdform)
     stdform = stdform[0:stdform.find('=')] + f'- {radius**2}'
     answer = str(expand(cleanfunction(stdform)))
     answer = answer.replace("**", "^")
@@ -184,4 +183,4 @@ def findx(function):
 # y = Symbol('y')
 # print(expand(x**2 + 6*x))
 
-print(cgrlform(5, -2, 3))
+# print(cgrlform(5, -2, 3))
