@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from calculations import sendemail
 
+
 def contact(request):
     if request.method == "POST":
         email = request.POST.get('email')
