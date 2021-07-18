@@ -116,8 +116,6 @@ def foperations(request):
             answer = calc.operate(function1, function2, x, operation)
         except:
             answer = "Nope"
-        print(f"{selectedop}")
-        print(answer)
 
 
         return render(request, 'genmath/foperations.html', {
