@@ -1,0 +1,151 @@
+
+.notnav {
+    background-color: transparent;
+    padding: 1rem 0 0 36px;
+    font-size: 0.8rem;
+    --bs-breadcrumb-divider: '>';
+}
+
+.subject {
+    font-size: 13px;
+    color: #7c3aed;
+}
+
+.choices {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.choices a {
+    width: auto;
+    margin: 10px;
+}
+
+.content-body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.content-body > div {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.content-body2 {
+    box-sizing: border-box;
+}
+
+.card {
+    box-sizing: border-box;
+    min-width: 286px;
+    margin: 32px auto;
+    /* margin-left: 36px;
+    margin-right: 36px; */
+    background-color: #7c3aed;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.116) 0px 10px 20px, rgba(0, 0, 0, 0.226) 0px 6px 6px;
+}
+
+/* @media screen and (max-width: 641px) {
+    .card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+} */
+
+
+.card-header {
+    text-align: center;
+    border-bottom: none;
+    color: rgb(220, 232, 245);
+    border-radius: 12px;
+}
+
+.card-body {
+    background-color: rgb(220, 232, 245);
+    align-items: flex-start;
+    border-radius: 12px;
+}
+
+.card-text {
+    font-size: 0.8rem;
+}
+
+span.math-text {
+    color: #7c3aed !important;
+}
+
+.sample-eqs {
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.form-floating * {
+    text-align: center;
+}
+
+.form-floating > label {
+    position: absolute;
+    left: unset;
+    width: 100%;
+} 
+
+.form-floating > .form-control:focus~label,
+.form-floating > .form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+    transform: translateY(-.5rem);
+    width: 100%;
+    font-size: 0.75rem;
+}
+
+.input-group-text {
+    background-color: #bcd7fc;
+}
+
+.btn {
+    align-self: center;
+    background-color: #7c3aed;
+}
+
+#math-display {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+.answer {
+    text-align: center;
+}
+
+.next {
+    margin-top: 10%;
+    text-align: center;
+    align-self: flex-end;
+}
+
+
+/* Operations on Functions Additionals */
+
+.form-select {
+    align-self: center;
+    width: auto;
+}
+
+.selected-op {
+    display: none;
+}
