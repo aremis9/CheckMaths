@@ -88,12 +88,6 @@ nav, #navbar {
     padding: 20px 15vw 0;
 }
 
-@media screen and (max-width: 700px) {
-    .contact-form {
-        padding: 20px 5vw 0;
-    }
-}
-
 .emailname input {
     text-align: center;
 }
@@ -114,6 +108,22 @@ nav, #navbar {
     width: 100%;
 }
 
+.alert {
+    margin: 20px 15vw 0;
+    text-align: center !important;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .contact-form {
+        padding: 20px 5vw 0;
+    }
+
+    .alert {
+        margin: 20px 5vw 0;
+    }
+}
 
 /* .row > div {
     height: calc(100vh - 300px);

@@ -25,9 +25,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name='main/index.html'),
         name='home'),
-    # url(r'^contact/$', TemplateView.as_view(template_name='main/contact.html'),
-    #     name='home'),
     path('contact/', views.contact, name="contact"),
+    url(r'^about/$', TemplateView.as_view(template_name='main/about.html'),
+        name='about'),
     path('genmath/', include('genmath.urls')),
     path('precal/', include('precal.urls')),
     path('bscal/', include('bscal.urls'))

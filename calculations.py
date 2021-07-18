@@ -247,16 +247,36 @@ def differentiate(function, nth):
 #         server.sendmail(sender_email, receiver_email, message)
 
 
-def sendemail():
+def sendemail(useremail, subject, message):
+    success = True
+    ty = EmailMessage()
     msg = EmailMessage()
 
-    msg['To'] = 'example@email.com'        # receiver
-    msg['From'] = config('myemail')           
-    email = config('myemail')               # sender email
-    password = config('mypassword')         # sender password
+    if useremail:
+        try:
+            ty['To'] = useremail                   # receiver
+            ty['From'] = config('myemail')           
+            email = config('myemail')               # sender email
+            password = config('mypassword')         # sender password
 
-    msg['Subject'] = 'Subject'              # subject
-    msg.set_content('This is my message')   # message
+            ty['Subject'] = 'Thank you for your message/feedback!'             # subject
+            ty.set_content('We use these messages and feedbacks for the improvement of your CheckMath experience.\n\n - CheckMath')         
+
+            # Send the message via our own SMTP server.
+            server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+            server.login(email, password)
+            server.send_message(ty)
+        except:
+            success = False
+
+
+    msg['To'] = config('myemail')           # send to myself
+    msg['From'] = config('myemail')           
+    email = config('myemail')               
+    password = config('mypassword')         
+
+    msg['Subject'] = subject             # subject
+    msg.set_content(message)             # message
 
     # Send the message via our own SMTP server.
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
@@ -264,4 +284,5 @@ def sendemail():
     server.send_message(msg)
     server.quit()
 
-sendemail()
+    return success
+
