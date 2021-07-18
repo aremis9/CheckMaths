@@ -54,7 +54,7 @@ def differentiation(request):
             nth = int(nth)
         except:
             return render(request, "bscal/differentiation.html", {
-                'function': '',
+                'function': function,
                 'nth': '1',
                 'answer': 'Nope'
             })
@@ -73,4 +73,8 @@ def differentiation(request):
 
 
     else:
-        return render(request, 'bscal/differentiation.html')
+        return render(request, 'bscal/differentiation.html', {
+            'function': '-4x^2 - 5x - 2',
+            'nth': '1',
+        })
+
