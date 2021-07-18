@@ -5,5 +5,47 @@
 {% endblock %}
 
 {% block body %}
-    <div class="navbar-brand" id="checkmath" href="/">CheckMath</div>
+    <!-- <div class="pagehead navbar-brand" id="checkmath" href="/">CheckMath</div> -->
+    <div class="about">
+
+        <div class="about-content">
+            This website is for my co-senior high school students, <br> specifically for my friends
+            who always ask me if their answer is correct :)
+            <div><br><br></div>
+
+        </div>
+
+    </div>
+    <div class="developed">
+        Developed by <a href="https://github.com/aremis9/" target="_blank">aremis</a>
+    </div>
+
+    <div class="py-2">
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header" style="justify-content: center;">
+                        <h5 class="modal-title" style="color: rgb(197, 5, 5);">Disclaimer!</h5>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    </div>
+                    <div class="modal-body" style="text-align: center;">
+                        <p>
+                            This website doesn't encourage any forms of academic dishonesty. <br><br>
+                            Use at your own risk.
+                        </p>
+                    </div>
+                    <div class="modal-footer" style="justify-content: center;">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'), {})
+        myModal.toggle()
+    </script>
 {% endblock %}

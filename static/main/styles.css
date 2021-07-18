@@ -84,7 +84,8 @@ nav, #navbar {
 
 /* Contact Page */
 
-.contact-form {
+.contact-form, .about-content {
+    text-align: center;
     padding: 20px 15vw 0;
 }
 
@@ -116,7 +117,7 @@ nav, #navbar {
 
 @media screen and (max-width: 700px) {
 
-    .contact-form {
+    .contact-form, .about-content {
         padding: 20px 5vw 0;
     }
 
@@ -125,6 +126,23 @@ nav, #navbar {
     }
 }
 
+.about {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .about-content {
+} */
+
+.developed {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+}
 /* .row > div {
     height: calc(100vh - 300px);
     line-height: calc(100vh - 300px);
