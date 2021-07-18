@@ -1,0 +1,44 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}
+    Contact - CheckMath
+{% endblock %}
+
+{% block body %}
+
+    <div class="pagehead">
+        <h5>Your feedback matters for the improvement of this website!</h5>
+    </div>
+    
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="contact-form">
+            <div class="input-group mb-3 emailname">
+                <!-- <span class="input-group-text label">Email:</span> -->
+                <input type="text" class="form-control" placeholder="Email" name="email" aria-label="Email" value="{{ email }}" required>
+                <div class="space"></div>
+                <!-- <span class="input-group-text label">Name:</span> -->
+                <input type="text" class="form-control" placeholder="Name (optional)" value="{{ name }}" name="name" aria-label="Name">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Subject:</span>
+                <input type="text" class="form-control" placeholder="I just want to say hi" name="subject" value="{{ subject }}" aria-label="Username" required>
+            </div>
+            <div class="mb-3 message">
+                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="7" placeholder="Enter your message/concern/feedback here." value="{{ message }}" required>{{ message }}</textarea>
+            </div>
+            <div class="submit-container">
+                <input type="submit" class="btn btn-primary form-submit" value="Submit"">
+            </div>
+
+            {% if invalid %}
+                <div style="font-size: 0.7rem; margin-top: 10px; text-align: center; color: red;">Email, subject, and message is required!</div>
+            {% elif not invalid %}
+                <div style="font-size: 0.7rem; margin-top: 10px; text-align: center; color: rgb(0, 255, 0);">Thank you for submitting!</div>
+            {% endif %}
+
+        </div>
+    </form>
+{% endblock %}

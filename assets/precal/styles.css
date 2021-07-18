@@ -21,3 +21,19 @@
     text-align: center;
     width: 12%;
 }
+
+
+
+/* Basic Calculus */
+
+#value-c {
+    margin: 0;
+
+    height: 20px;
+    width: 20px !important;
+}
+
+.small-input {
+    width: 30px !important;
+    text-align: center;
+}

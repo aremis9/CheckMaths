@@ -1,6 +1,12 @@
 from sympy import *
 from sympy.geometry.util import find
 
+# import smtplib, ssl
+import smtplib
+from email.message import EmailMessage
+from decouple import config 
+
+
 def cleanfunction(function):
     func = function
     # funclen = [i for i in range(len(func))]
@@ -207,8 +213,6 @@ def differentiate(function, nth):
     return answer
 
 
-
-
 # f = 'x^2 - 6x + 9'
 # print(findx(f))
 
@@ -224,3 +228,40 @@ def differentiate(function, nth):
 
 # answer = differentiate('x(3x^2 - 9)', 1)
 # print(answer)
+
+
+# def sendemail():
+#     port = 465  # For SSL
+#     smtp_server = "smtp.gmail.com"
+#     receiver_email = 'kmsimera@gmail.com'  # Enter receiver address
+#     sender_email = config('myemail')  # Enter sender address
+#     password = config('mypassword') 
+#     message = """\
+#     Subject: Hi there
+
+#     This message is sent from Python."""
+
+#     context = ssl.create_default_context()
+#     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+#         server.login(sender_email, password)
+#         server.sendmail(sender_email, receiver_email, message)
+
+
+def sendemail():
+    msg = EmailMessage()
+
+    msg['To'] = 'example@email.com'        # receiver
+    msg['From'] = config('myemail')           
+    email = config('myemail')               # sender email
+    password = config('mypassword')         # sender password
+
+    msg['Subject'] = 'Subject'              # subject
+    msg.set_content('This is my message')   # message
+
+    # Send the message via our own SMTP server.
+    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    server.login(email, password)
+    server.send_message(msg)
+    server.quit()
+
+sendemail()

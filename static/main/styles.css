@@ -82,6 +82,38 @@ nav, #navbar {
 }
 
 
+/* Contact Page */
+
+.contact-form {
+    padding: 20px 15vw 0;
+}
+
+@media screen and (max-width: 700px) {
+    .contact-form {
+        padding: 20px 5vw 0;
+    }
+}
+
+.emailname input {
+    text-align: center;
+}
+
+.space {
+    display: block;
+    width: 10px;
+}
+
+.message {
+    margin-top: 40px;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 
 /* .row > div {
     height: calc(100vh - 300px);
