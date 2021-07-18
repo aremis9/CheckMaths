@@ -138,6 +138,7 @@ nav, #navbar {
 } */
 
 .developed {
+    font-size: 0.7rem;
     width: 100%;
     position: absolute;
     bottom: 20px;
