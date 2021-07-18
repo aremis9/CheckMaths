@@ -87,15 +87,6 @@ def graphing(request):
                 'answer': 'Nope'
             })
 
-        try:
-            answer = calc.evaluate(function, {})
-        except:
-            answer = 'Nope'
-            return render(request, "precal/graphing.html", {
-                'function': function,
-                'answer': 'Nope'
-            })
-
         return render(request, "precal/graphing.html", {
             'function': function
         })
