@@ -1,5 +1,5 @@
 # CheckMaths
-https://checkmath.herokuapp.com
+https://checkmaths.herokuapp.com
 
 <br>
 
@@ -11,7 +11,6 @@ https://checkmath.herokuapp.com
 These three applications are the mathematics subject for senior high school. <br>
 Soon, if ever, **CheckMaths** will have more applications (*subjects*)
 
-<br>
 <br>
 
 ### The website is composed of four (4) main pages:
@@ -25,7 +24,6 @@ Soon, if ever, **CheckMaths** will have more applications (*subjects*)
 - About
     - Information about the project.
 
-<br>
 <br>
 
 ### Here are the parts that can be found in every calculator page:
