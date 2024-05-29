@@ -1,5 +1,4 @@
 # CheckMaths
-https://checkmaths.herokuapp.com
 
 <br>
 
